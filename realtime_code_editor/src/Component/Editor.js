@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { dracula, okaidia } from "@uiw/codemirror-theme-dracula";
+import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-solarized';
+
 import ACTIONS from "../Actions";
 const Editor = ({ socketRef, roomId }) => {
   const [code, setcode] = useState("console.log('hello world!');");
@@ -45,7 +47,7 @@ const Editor = ({ socketRef, roomId }) => {
       }}
       extensions={[javascript({ jsx: true })]}
       onChange={onChange}
-      theme={dracula}
+      theme={solarizedDark}
     />
   );
 };
